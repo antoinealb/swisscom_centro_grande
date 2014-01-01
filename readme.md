@@ -27,6 +27,7 @@ Once again, binwalk is our friend, let's run it against vmlinux.bin :
 *Insert capture_2.png*
 
 So in order we have :
+
 1. A linux kernel image which is slightly old. I did not use the latest
    version of the firmware, which might explain this.
 2. Some copyright strings, which, after a bit of Googling around seems to be
