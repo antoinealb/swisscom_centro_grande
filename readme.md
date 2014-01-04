@@ -16,7 +16,8 @@ First of all, what's in the box ?
 We can see in the output that there is a gzipped file which was called
 "vmlinux.bin". Interesting. Let's extract this file :
 
-    dd if=Vx226N1_50033.rmt of=vmlinux.bin.gz bs=1 skip=27387
+    binwalk Vx226N1_50033.rmt -e
+    cp _Vx226N1_50033.rmt.extracted/vmlinux.bin .
     gzip -d vmlinux.bin.gz
 
 # What's in the vmlinux ?
@@ -42,8 +43,10 @@ Let's extract the file systems. For this we will need the size of the various
 parts, which we can calculate by taking the diff between the start adress and
 the end adress (the start of next element).
 
-    dd if=vmlinux.bin of=cramfs1 bs=1 skip=2818048 count=7077888
-    dd if=vmlinux.bin of=cramfs2 bs=1 skip=9895936
+    binwalk -D cramfs:.fs -vv vmlinux.bin
+
+    mv _vmlinux.bin.extracted/2B0000.fs cramfs1
+    mv _vmlinux.bin.extracted/970000.fs cramfs2
 
 We can still run binwalk against cramfs1 and cramfs2 to check that we
 extracted exactly what we wanted.
