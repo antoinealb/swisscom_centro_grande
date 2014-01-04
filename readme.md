@@ -18,7 +18,6 @@ We can see in the output that there is a gzipped file which was called
 
     binwalk Vx226N1_50033.rmt -e
     cp _Vx226N1_50033.rmt.extracted/vmlinux.bin .
-    gzip -d vmlinux.bin.gz
 
 # What's in the vmlinux ?
 Once again, binwalk is our friend, let's run it against vmlinux.bin :
