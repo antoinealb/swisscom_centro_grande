@@ -24,7 +24,7 @@ Once again, binwalk is our friend, let's run it against vmlinux.bin :
 
     binwalk vmlinux.bin
 
-*Insert capture_2.png*
+![alt text](https://github.com/antoinealb/swisscom_centro_grande/raw/master/binwalk_vmlinux.png "Binwalk result on vmlinux.bin")
 
 So in order we have :
 
