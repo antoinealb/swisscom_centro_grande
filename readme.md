@@ -73,4 +73,22 @@ the content of the two cramfs images.
     ./fmk/src/uncramfs-lzma/uncramfs-lzma cramfs2_content/ cramfs2
 
 Listing the content of cramfs1_content shows some directory structure familiar
-to the UNIX afficionado.
+to the UNIX afficionado :
+
+```
+.
+|-- bin
+|-- dlna
+|   `-- xml
+|       `-- icon
+|-- etc
+|   |-- ssh
+|   `-- wlan
+|-- home
+|   |-- html
+|   `-- httpd
+|       `-- html
+|           `-- images
+`-- lib
+```
+
