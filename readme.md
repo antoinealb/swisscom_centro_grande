@@ -96,6 +96,9 @@ to the UNIX afficionado :
 `-- lib
 ```
 # Analysis of /etc
+The first thing I noticed about /etc is it doesn't contain the usual `passwd` and `shadow` files which would be very cool to have :( 
+I think it is not possible for a box to boot without them and I just haven't found them yet.
+If anyone knows more on this topic, I would be really happy to hear from you.
 ## sshd_config
 This file is the configuration for the OpenSSH server, which is used for remote
 administration of the router. I have cut some parts of the file to focus on what
