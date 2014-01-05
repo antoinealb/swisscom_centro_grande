@@ -95,4 +95,33 @@ to the UNIX afficionado :
 |           `-- images
 `-- lib
 ```
+# Analysis of /etc
+## sshd_config
+This file is the configuration for the OpenSSH server, which is used for remote
+administration of the router. I have cut some parts of the file to focus on what
+seemed important to me.
+
+At the start of the file, we see some instructions to tell the server to listen
+on any IPv4 adress, on port 22:
+
+```
+Port 22
+AddressFamily inet
+```
+
+Then we have some declarations about which method of authentification are allowed:
+
+```
+PermitRootLogin yes
+RSAAuthentication no
+PubkeyAuthentication no
+PasswordAuthentication yes
+ChallengeResponseAuthentication no
+PermitEmptyPasswords yes
+```
+
+Let's hope it is used for production with those settings ! :) That's about it
+for sshd config, now let's move to something else.
+
+
 
