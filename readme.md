@@ -3,6 +3,10 @@ This repository contains the results of my reverse engineering of the firmware
 of the Swisscom Centro Grande ADSL box. I will probably do a blog post with all
 those notes. But for that I need a blog.
 
+**Note:** I am by no mean a Linux wizard, so I might miss interesting stuff, and
+say wrong things. If you think something should be added / changed, feel free to
+open an issue / make a pull request.
+
 # Getting the firmware
 After a bit of googling, I found the download URL for a version of the firmware :
 
