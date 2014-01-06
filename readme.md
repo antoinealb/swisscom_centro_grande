@@ -126,5 +126,5 @@ PermitEmptyPasswords yes
 Let's hope it is used for production with those settings ! :) That's about it
 for sshd config, now let's move to something else.
 
-
+Also, You can notice that the ssh v1 protocol is enabled by default. This could lead to some funny exploit.
 
