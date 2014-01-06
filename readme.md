@@ -128,3 +128,33 @@ for sshd config, now let's move to something else.
 
 Also, You can notice that the ssh v1 protocol is enabled by default. This could lead to some funny exploit.
 
+# Newer version of the firmware
+It seems that there is another more recent version of the firmware (if I can understand Swisscom's file naming convention)
+available at : http://rmsdl.bluewin.ch/pirelli/Vx226x1_60208.sig Let's see what it hides.
+
+```
+wget http://rmsdl.bluewin.ch/pirelli/Vx226x1_60208.sig
+binwalk Vx226x1_60208.sig
+```
+
+This time it contains more data directly, for example two SquashFS instances that we will try extracting immediately.
+
+```
+binwalk -D squashfs:.fs Vx226x1_60208.sig
+cd fmk/src/
+./configure
+make
+cd ../..
+mkdir fs1_content fs2_content
+./fmk/unsquashfs_all.sh _Vx226x1_60208.sig.extracted/120100.fs fs1_content/
+./fmk/unsquashfs_all.sh _Vx226x1_60208.sig.extracted/AC0100.fs fs2_content/
+```
+
+Running `tree` against them reveals a directory structure that overlaps each other (we got /etc two times, etc..) but this times there is a lot more files, for example some init.d
+
+After checking /etc/version in both filesystems, it seems that there is a main version and a recovery one which is smaller than the main.
+
+
+
+
+
