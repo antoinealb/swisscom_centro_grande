@@ -11,7 +11,7 @@ open an issue / make a pull request.
 After a bit of googling, I found the download URL for a version of the firmware :
 
     wget http://rmsdl.bluewin.ch/pirelli/Vx226N1_50033.rmt
- 
+
 # Extracting vmlinux.bin
 First of all, what's in the box ?
 
@@ -35,7 +35,7 @@ So in order we have :
 1. A linux kernel image which is slightly old. I did not use the latest
    version of the firmware, which might explain this.
 2. Some copyright strings, which, after a bit of Googling around seems to be
-   the copyright string of the deflate program of zlib. Nice. 
+   the copyright string of the deflate program of zlib. Nice.
 3. Some LZMA data, I have yet to undertand what they are.
 4. Some gzip'd data which was modified just before the linux kernel.
 4. Two CramFS file systems. CramFS is a filesystem designed to be embedded on
@@ -60,7 +60,7 @@ https://code.google.com/p/firmware-mod-kit/
 
 First of all let's compile the tools we will need to extract it :
 uncramfs-lzma. I tried extracting the files using standard CramFS and it did
-not work. 
+not work.
 
     wget https://firmware-mod-kit.googlecode.com/files/fmk_099.tar.gz
     tar -xzf fmk_099.tar.gz
@@ -96,7 +96,7 @@ to the UNIX afficionado :
 `-- lib
 ```
 # Analysis of /etc
-The first thing I noticed about /etc is it doesn't contain the usual `passwd` and `shadow` files which would be very cool to have :( 
+The first thing I noticed about /etc is it doesn't contain the usual `passwd` and `shadow` files which would be very cool to have :(
 I think it is not possible for a box to boot without them and I just haven't found them yet.
 If anyone knows more on this topic, I would be really happy to hear from you.
 ## sshd_config
@@ -154,7 +154,9 @@ Running `tree` against them reveals a directory structure that overlaps each oth
 
 After checking /etc/version in both filesystems, it seems that there is a main version and a recovery one which is smaller than the main.
 
+# Default telnet / SSH passwords
+* user: `admin`
+* password: `1234`
 
-
-
-
+Sadly we don't land on a real shell but on their configuration system.
+Perhaps this can get changed ?
