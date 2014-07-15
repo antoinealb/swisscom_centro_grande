@@ -125,3 +125,21 @@ udp        0      0 :::53                   :::*                                
  5346 1001      1312 R    ps aux
 / $
 ```
+
+## List of SUID executables
+- `/old_root/bin/busybox`
+- `/old_root/bin/ledctl`
+- `/old_root/bin/swc-backup`
+- `/old_root/bin/wlctl`
+- `/old_root/bin/wlctl_scan`
+- `/old_root/bin/wlctl_scanresults`
+- `/old_root/usr/sbin/hostapd_cli`
+- `/old_root/usr/sbin/tcpdump`
+- `/bin/busybox`
+- `/bin/ledctl`
+- `/bin/swc-backup`
+- `/bin/wlctl`
+- `/bin/wlctl_scan`
+- `/bin/wlctl_scanresults`
+- `/usr/sbin/hostapd_cli`
+- `/usr/sbin/tcpdump`
