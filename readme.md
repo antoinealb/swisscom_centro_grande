@@ -160,3 +160,25 @@ After checking /etc/version in both filesystems, it seems that there is a main v
 
 Sadly we don't land on a real shell but on their configuration system.
 Perhaps this can get changed ?
+
+It seems that when we run the adslctl command, it really executes the binary in `/bin/adslctl`.
+At least string matches.
+
+`show processes` run `ps` and shows results.
+
+# Getting a shell
+
+**Warning, this may be bricking your router!**
+
+1. Connect to the router : `telnet 192.168.1.1`. User: `admin`, pass: `1234`
+2. Go to factory settings : `factory` and enter the command `factory-mode`. This command is hidden, meaning it wont show up in autocomplete.
+3. Your router will reboot. Once it has reboot, reset it using the reset button (at least I had to do it).
+4. You may have to re configure your network card manually.
+5. Telnet on it again, but this time use `admin` as username and password.
+6. Lauch `system shell`. Tadaa.
+
+![shell acess](https://github.com/antoinealb/swisscom_centro_grande/raw/master/shell.png "Got shell access.")
+
+To get back to normal mode, exit the shell and then run `restore default-setting`.
+The router will reboot into normal mode.
+
